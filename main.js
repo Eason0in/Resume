@@ -1,8 +1,12 @@
+'use strict'
 const menuBlocks = document.querySelector('.menu-blocks')
 const menuClose = document.getElementById('close')
 const menuList = document.querySelector('.menu-container')
 const contentBlocks = [...document.querySelectorAll('.content-blocks')]
 const menuLists = [...document.querySelectorAll('.menu li')]
+const nameBlock = document.querySelector('.name-block')
+const preloader = document.querySelector('.preloader')
+const preloaderLeft = document.querySelector('.preloader-left')
 const clearClassMap = [
   {
     array: contentBlocks,
@@ -14,6 +18,12 @@ const clearClassMap = [
   }
 ]
 
+//當畫面載好時
+window.onload = () => {
+  preloaderLeft.classList.add('slide-left')
+  preloader.classList.add('fade-out')
+}
+
 //監聽四個menu項目
 menuBlocks.addEventListener('click', e => {
   const selectMenu = e.target.closest('.menu-block').dataset.menu
@@ -22,6 +32,8 @@ menuBlocks.addEventListener('click', e => {
     const menuItem = document.querySelector(`li.${selectMenu}`)
     toggleClass(selectMenu, menuItem)
     menuList.classList.toggle('showx')
+    menuBlocks.classList.add('hidex')
+    nameBlock.classList.add('reverse')
   }
 })
 
@@ -30,6 +42,7 @@ menuList.addEventListener('click', e => {
   const menuItem = e.target
   if ((menuItem.nodeName === 'LI') & (menuItem.id !== 'close')) {
     clearClass()
+
     toggleClass(menuItem.textContent, menuItem)
   }
 })
@@ -38,12 +51,19 @@ menuList.addEventListener('click', e => {
 const toggleClass = (selectMenu, menuItem) => {
   const selectItem = document.getElementById(selectMenu)
   selectItem.classList.toggle('showx')
+  selectItem.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  })
   menuItem.classList.toggle('active')
 }
 
 //監聽x
 menuClose.addEventListener('click', () => {
   menuList.classList.toggle('showx')
+  menuBlocks.classList.remove('hidex')
+  nameBlock.classList.remove('reverse')
   clearClass()
 })
 
