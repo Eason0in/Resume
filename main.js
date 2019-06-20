@@ -20,7 +20,7 @@ const clearClassMap = [
 
 //當畫面載好時
 window.onload = () => {
-  preloaderLeft.classList.add('slide-left')
+  preloaderLeft.classList.add('slide-right')
   preloader.classList.add('fade-out')
 }
 
