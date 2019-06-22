@@ -24,6 +24,34 @@ window.onload = () => {
   preloader.classList.add('fade-out')
 }
 
+//清除所有content的showx class & menuLists的active class
+const clearClass = () => {
+  for (let i = 0; i < clearClassMap.length; i++) {
+    const { array, className } = clearClassMap[i]
+    array.forEach(item => item.classList.remove(`${className}`))
+  }
+}
+
+//關閉content設定相關class
+const closeMenu = () => {
+  menuList.classList.toggle('showx')
+  menuBlocks.classList.remove('hidex')
+  nameBlock.classList.remove('reverse')
+  clearClass()
+}
+
+//切換content的showx class & menuLists的active class
+const toggleClass = (selectMenu, menuItem) => {
+  const selectItem = document.getElementById(selectMenu)
+  selectItem.classList.toggle('showx')
+  selectItem.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  })
+  menuItem.classList.toggle('active')
+}
+
 //監聽四個menu項目
 menuBlocks.addEventListener('click', e => {
   const selectMenu = e.target.closest('.menu-block').dataset.menu
@@ -47,30 +75,12 @@ menuList.addEventListener('click', e => {
   }
 })
 
-//切換content的showx class & menuLists的active class
-const toggleClass = (selectMenu, menuItem) => {
-  const selectItem = document.getElementById(selectMenu)
-  selectItem.classList.toggle('showx')
-  selectItem.scroll({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-  })
-  menuItem.classList.toggle('active')
-}
-
 //監聽x
-menuClose.addEventListener('click', () => {
-  menuList.classList.toggle('showx')
-  menuBlocks.classList.remove('hidex')
-  nameBlock.classList.remove('reverse')
-  clearClass()
-})
+menuClose.addEventListener('click', closeMenu)
 
-//清除所有content的showx class & menuLists的active class
-const clearClass = () => {
-  for (let i = 0; i < clearClassMap.length; i++) {
-    const { array, className } = clearClassMap[i]
-    array.forEach(item => item.classList.remove(`${className}`))
+//監聽name-block區塊 但如果是點擊download resume不觸發
+nameBlock.addEventListener('click', e => {
+  if (document.querySelector('.name-block.reverse') !== null && e.target.nodeName !== 'A') {
+    closeMenu()
   }
-}
+})
