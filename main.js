@@ -6,7 +6,8 @@ const contentBlocks = [...document.querySelectorAll('.content-blocks')]
 const menuLists = [...document.querySelectorAll('.menu li')]
 const nameBlock = document.querySelector('.name-block')
 const preloader = document.querySelector('.preloader')
-const preloaderLeft = document.querySelector('.preloader-left')
+const preloaderRight = document.querySelector('.preloader-right')
+
 const clearClassMap = [
   {
     array: contentBlocks,
@@ -20,8 +21,10 @@ const clearClassMap = [
 
 //當畫面載好時
 window.onload = () => {
-  preloaderLeft.classList.add('slide-right')
-  preloader.classList.add('fade-out')
+  preloaderRight.classList.add('slide-right')
+  setTimeout(() => {
+    preloader.classList.add('fade-out')
+  }, 200)
 }
 
 //清除所有content的showx class & menuLists的active class
