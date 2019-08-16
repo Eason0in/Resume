@@ -57,9 +57,9 @@ const toggleClass = (selectMenu, menuItem) => {
 
 //監聽四個menu項目
 menuBlocks.addEventListener('click', e => {
-  const selectMenu = e.target.closest('.menu-block').dataset.menu
-
-  if (selectMenu) {
+  const isCheckMenuBlock = e.target.closest('.menu-block')
+  if (isCheckMenuBlock) {
+    const selectMenu = e.target.closest('.menu-block').dataset.menu
     const menuItem = document.querySelector(`li.${selectMenu}`)
     toggleClass(selectMenu, menuItem)
     menuList.classList.toggle('showx')
