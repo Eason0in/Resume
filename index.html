@@ -216,7 +216,9 @@
                   </div>
                   <div class="desc">
                     <p>
-                      第六屆 PIXNET HACKATHON Taiwan Browser 翻轉在地體驗比賽之作品。主要負責前端畫面及 API 的串接。
+                      第六屆 PIXNET HACKATHON Taiwan Browser 翻轉在地體驗比賽之作品，使用 PIXNET API
+                      搜尋使用者旅行地點的熱門文章，並智能規劃行程供使用者參考。<br />主要負責 Vue 及 Vuetify 架構以及
+                      API 的串接。
                     </p>
                   </div>
                   <div class="technology">
@@ -227,48 +229,24 @@
                       <li>使用 Vue Component 管理重複結構。</li>
                       <li>透過 Router 管理前後台路由。</li>
                     </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="portfolio-item">
-                <div class="col-12 mx-auto mb-4">
-                  <img src="./images/KB.png" alt="portfolio" />
-                </div>
-                <div class="col-12 mx-auto">
-                  <div class="subtitle">
-                    <h3>KinkyBoots 歌劇網站</h3>
-                    <div class="github">
-                      <a
-                        href="https://github.com/Eason0in/Kinky-Boots-server"
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        ><i class="ion-social-github"></i>GitHub-後端</a
-                      >
-                      <a
-                        href="https://github.com/Eason0in/Kinky-Boots-client"
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        ><i class="ion-social-github"></i>GitHub-前端</a
-                      >
-                    </div>
-                    <div class="demo">
-                      <a href="https://kinky-boots.now.sh/#/" target="_blank" rel="nofollow noopener noreferrer"
-                        ><i class="fa fa-play-circle" aria-hidden="true"></i>Demo</a
-                      >
-                    </div>
-                  </div>
-                  <div class="desc">
-                    <p>
-                      KinkyBoots 網頁主要包含介紹歌劇院、商店頁面購買靴子及訂票頁面，可觀看剩餘座位票數，訂購完成會寄送
-                      Email 確認信。
-                    </p>
-                  </div>
-                  <div class="technology">
-                    <p>[相關技術]</p>
+
+                    <p>[遇到的問題]</p>
                     <ul>
-                      <li>使用 Vue CLI 3 開發 SPA 網站。</li>
-                      <li>透過 Router 管理前後台路由。</li>
-                      <li>jQuery 製作功能頁面及商店頁面動畫。</li>
+                      <li class="mb-2">
+                        <span class="font-weight-bold">Question: </span>使用 Router 傳遞使用者的旅遊時間、地點及目的，在不需要這些參數的步驟中還是要接收並傳至下一個 Router 使網頁 Url 變的很冗長。
+                        <br />
+                        <span class="font-weight-bold">Solution: </span>應該要加入 Vuex 管理統一資料，才不會沒用到的 Component 也需要幫忙傳遞。
+                      </li>
+                      <li class="mb-2">
+                        <span class="font-weight-bold">Question: </span>初賽甄選時使用 Materialize CDN 直接搭配 HTML 、 CSS 及 JavaScript 寫程式，初賽入圍後導入 Vue 框架發現 Materialize 的一些動畫效果都失效，因為 .Vue 會經過編譯才轉換成原生 HTML 、 CSS 及 JavaScript。
+                        <br />
+                        <span class="font-weight-bold">Solution: </span>搜尋資料找到運用 Materialize for Vue 的框架 Vuetify ，學習並使用在此專案中。
+                      </li>
+                      <li class="mb-2">
+                        <span class="font-weight-bold">Question: </span>串接後端 API 時失出現 <code>'Access-Control-Allow-Origin' header is present on the requested resource</code>。
+                        <br />
+                        <span class="font-weight-bold">Solution: </span>學習程式的教學平台助教有開直播跟同學們分享這個問題，，所以一看到就立馬通知後端的隊友處理這個跨瀏覽器資料共享的問題。
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -302,8 +280,9 @@
                   </div>
                   <div class="desc">
                     <p>
-                      KinkyBoots 網頁主要包含介紹歌劇院、商店頁面購買靴子及訂票頁面，可觀看剩餘座位票數，訂購完成會寄送
-                      Email 確認信。
+                      KinkyBoots 網頁包含介紹歌劇院、商店頁面購買靴子及訂票頁面，可觀看剩餘座位票數，訂購完成會寄送
+                      Email 確認信。<br />主要負責後端資料庫處理及 Email 發送功能，前端部分負責串接 API
+                      資料，並綁定至畫面上。
                     </p>
                   </div>
                   <div class="technology">
@@ -313,6 +292,124 @@
                       <li>透過 Router 管理前後台路由。</li>
                       <li>jQuery 製作功能頁面及商店頁面動畫。</li>
                     </ul>
+
+                      <p>[遇到的問題]</p>
+                      <ul>
+                        <li class="mb-2">
+                          <span class="font-weight-bold">Question: </span>第一次把 jQuery 加入 Vue 的專案，要如何在每一個 .vue 檔都能使用到 jQuery 選擇器 $ 呢?
+                          <br />
+                          <span class="font-weight-bold">Solution: </span>跟夥伴上網搜尋方法，最後在 Youtube 上搜尋到教學影片，而且也發現 jQuery + JavaScript 可以更方便撰寫程式，例如:
+                          <code>$(`.${CurrentBoot}`).attr("src", `/static/${getBootsColor}.png`);</code> 可以把選擇目標及圖片路徑變成動態的變數。
+                        </li>
+                        <li class="mb-2">
+                          <span class="font-weight-bold">Question: </span>SendGrid 發送訂票通知信時都會被分到垃圾信箱。
+                          <br />
+                          <span class="font-weight-bold">Solution: </span>原本以為在 SendGrid 的系統可以設定這個問題，最後找到的解決方法是設定 Domain Name 讓 Gmail 不要判斷為垃圾信或廣告信。
+                        </li>
+                        <li class="mb-2">
+                          <span class="font-weight-bold">Question: </span>後端發送 Email 的信無法套用 CSS Class 郵件格式整個跑掉。
+                          <br />
+                          <span class="font-weight-bold">Solution: </span>想到平常收信時都會看到排版過的 Email 所以到自己的信箱尋找類似的 Email 結果發現都使用 Inline CSS ，不過也發現有亂數 Class 的部分，後來對照一下 Inline CSS 發現原來 Gmail 會編譯過一次才寄出。
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <div class="col-12 mx-auto mb-4">
+                  <img src="./images/EGTool.png" alt="portfolio" />
+                </div>
+                <div class="col-12 mx-auto">
+                  <div class="subtitle">
+                    <h3>EGTool</h3>
+                    <div class="demo">
+                      <a
+                        href=" https://drive.google.com/file/d/1iLZyl5-_CNL0QT-9I6sPamiMVPMWr1M-/view?usp=sharing"
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                        ><i class="fa fa-play-circle" aria-hidden="true"></i>Demo - Windows 軟體版</a
+                      >
+                    </div>
+                  </div>
+                  <div class="desc">
+                    <p>
+                      EGTool 是源自於前一份全端工程師工作時所發想的 Windows
+                      軟體，當時專案有很多待辦事項，一開始使用記事本，但又有暫時需要存放的資料，一次要開好幾個記事本桌面很雜亂，所以就製作一個可以同時兼具這兩種功能的軟體，後來還新增休息提醒以及
+                      Microsoft SQL 欄位轉換 C# model 的功能。
+                    </p>
+                  </div>
+                  <div class="technology">
+                    <p>[相關技術]</p>
+                    <ul>
+                      <li>使用 記事本存放專案的資料。</li>
+                      <li>使用 C# Windows Form 撰寫程式碼。</li>
+                      <li>使用計時器提醒休息時間。</li>
+                      <li>使用 icon 代替文字功能按鈕。</li>
+                    </ul>
+
+                    <p>[遇到的問題]</p>
+                    <ul>
+                      <li class="mb-2">
+                        <span class="font-weight-bold">Question: </span>要怎麼與 Windows 開啟檔案的畫面互動 ( 開啟檔案或是另存新檔 ) ?
+                        <br />
+                        <span class="font-weight-bold">Solution: </span>搜尋 Windows Form open txt ，找到 OpenFileDialog 及 SaveFileDialog 這個存檔的元件，經由不斷嘗試後完成此互動功能。
+                      </li>
+                      <li class="mb-2">
+                        <span class="font-weight-bold">Question: </span>要怎麼讀取 .txt 檔案內容 ?
+                        <br />
+                        <span class="font-weight-bold">Solution: </span>搜尋 Windows Form read txt ，找到 ReadAllText() 及 WriteAllText() 兩個 Function ， 後來又遇到檔案變亂碼，後來發現需要設定 Encoding 為 Default。
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <div class="col-12 mx-auto mb-4">
+                  <img src="./images/todoX.png" alt="portfolio" />
+                </div>
+                <div class="col-12 mx-auto">
+                  <div class="subtitle">
+                    <h3>代辦事項 X</h3>
+                    <div class="github">
+                      <a href="https://github.com/Eason0in/todoX" target="_blank" rel="nofollow noopener noreferrer"
+                        ><i class="ion-social-github"></i>GitHub</a
+                      >
+                    </div>
+                    <div class="demo">
+                      <a href="https://todox-74ff1.web.app/" target="_blank" rel="nofollow noopener noreferrer"
+                        ><i class="fa fa-play-circle" aria-hidden="true"></i>Demo</a
+                      >
+                    </div>
+                  </div>
+                  <div class="desc">
+                    <p>
+                      代辦事項 X 是 EGTool (全端工程師時工作開發的 Windows 軟體)的 Web
+                      版，考量到不只工作上生活上也需要記錄很多待辦事項，這次也增加依照 Project 不同管理各別的待辦事項。
+                    </p>
+                  </div>
+                  <div class="technology">
+                    <p>[相關技術]</p>
+                    <ul>
+                      <li>使用 React 開發 SPA 網站。</li>
+                      <li>透過 Redux 統一管理資料。</li>
+                      <li>透過 Thunk 結合非同步與後端資料庫互動。</li>
+                      <li>使用 Firebase 管理 Server 端、資料庫以及使用者權限。</li>
+                      <li>使用 Materialize 美化頁面。</li>
+                    </ul>
+
+                      <p>[遇到的問題]</p>
+                      <ul>
+                        <li class="mb-2">
+                          <span class="font-weight-bold">Question: </span>設定 this.setState() 時發現資料沒有即時更新。
+                          <br />
+                          <span class="font-weight-bold">Solution: </span>後來發現 this.setState() 因為效能的關係並不保證即時更新，所以後來就用 updater 的方式傳一個 callback 解決不保證即時更新的問題。
+                        </li>
+                        <li class="mb-2">
+                          <span class="font-weight-bold">Question: </span>
+                          <br />
+                          <span class="font-weight-bold">Solution: </span>
+                        </li>
+                      </ul>
                   </div>
                 </div>
               </div>
@@ -363,9 +460,13 @@
                         設計的理念，就能與設計師減少溝通障礙，增進使用者對產品的體驗；此篇部落格為自己學習 UX / UI
                         的心得與收穫分享。
                       </p>
-                      <a href="https://medium.com/@Eason_Lin/ui-ux%E5%88%9D%E9%AB%94%E9%A9%97-db8a91051324" target="_blank"
+                      <a
+                        href="https://medium.com/@Eason_Lin/ui-ux%E5%88%9D%E9%AB%94%E9%A9%97-db8a91051324"
+                        target="_blank"
                         rel="nofollow noopener noreferrer"
-                        class="more" class="more">
+                        class="more"
+                        class="more"
+                      >
                         READ NOW
                       </a>
                     </div>
