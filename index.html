@@ -90,8 +90,7 @@
                 <span><hr /></span>
               </h3>
               <h4 class="subheading">
-                喜歡持續學習並改善 Coding 品質，不畏懼問題熱愛 Debug
-                ，期望能幫助公司為生活便利所開發之產品，遍布於全球人類生活。
+                喜歡持續學習並改善 Coding 品質，不畏懼問題熱愛學習，期望能幫助公司為生活便利所開發之產品，遍布於全球人類生活。
               </h4>
               <div class="info-list row">
                 <div class="col-12 col-md-6"><span>Name : </span> 林依靜 Eason Lin</div>
@@ -160,12 +159,15 @@
                     <li>CSS 架構使用 Bootstrap 4 、 Materialize 及 MDL 元件庫。</li>
                     <li>jQuery 網頁互動效果整合。</li>
                     <li>撰寫 JavaScript ES6 開發前端功能。</li>
-                    <li>HTTP Request 串接各類 API。</li>
+                    <li>HTTP Request RESTful API。</li>
                     <li>AngularJS MVC 開發經驗。</li>
+                    <li>React 開發 SPA 網頁經驗。</li>
+                    <li>以 Redux 管理專案資料。</li>
+                    <li>使用 Redux Thunk 結合非同步資料庫及 Actions 。</li>
                     <li>Vue CLI 3 開發，以 Vuetify 設計 HTML 架構。</li>
                     <li>使用 Vue 開發 Component 管理重複結構。</li>
                     <li>使用 Vue EventBus 傳送同層 Component 資料經驗。</li>
-                    <li>有串接 FB Login 及 Google Map API 經驗。</li>
+                    <li>有串接 FB Login 經驗。</li>
                     <li>使用 Chrome Dev Tools 除錯。</li>
                   </ul>
                 </div>
@@ -179,7 +181,7 @@
                     <li>使用 SendGrid 製作並由伺服器發送郵件經驗。</li>
                     <li>使用 GitHub 多人開發版本控管及基本指令。</li>
                     <li>使用 Postman 測試API資料及傳送。</li>
-                    <li>使用 Visual Stduio Code Debug 功能。</li>
+                    <li>使用 Visual Studio Code Debug 功能。</li>
                   </ul>
                 </div>
               </div>
@@ -217,7 +219,7 @@
                   <div class="desc">
                     <p>
                       第六屆 PIXNET HACKATHON Taiwan Browser 翻轉在地體驗比賽之作品，使用 PIXNET API
-                      搜尋使用者旅行地點的熱門文章，並智能規劃行程供使用者參考。<br />主要負責 Vue 及 Vuetify 架構以及
+                      搜尋使用者旅行地點的熱門文章，並智能規劃行程供使用者參考。 主要負責 Vue 及 Vuetify 架構以及
                       API 的串接。
                     </p>
                   </div>
@@ -235,7 +237,7 @@
                       <li class="mb-2">
                         <span class="font-weight-bold">Question: </span>使用 Router 傳遞使用者的旅遊時間、地點及目的，在不需要這些參數的步驟中還是要接收並傳至下一個 Router 使網頁 Url 變的很冗長。
                         <br />
-                        <span class="font-weight-bold">Solution: </span>應該要加入 Vuex 管理統一資料，才不會沒用到的 Component 也需要幫忙傳遞。
+                        <span class="font-weight-bold">Solution: </span>應該要加入 Vuex 管理統一資料，沒用到資料的 Component 就無需幫忙傳遞。
                       </li>
                       <li class="mb-2">
                         <span class="font-weight-bold">Question: </span>初賽甄選時使用 Materialize CDN 直接搭配 HTML 、 CSS 及 JavaScript 寫程式，初賽入圍後導入 Vue 框架發現 Materialize 的一些動畫效果都失效，因為 .Vue 會經過編譯才轉換成原生 HTML 、 CSS 及 JavaScript。
@@ -243,9 +245,10 @@
                         <span class="font-weight-bold">Solution: </span>搜尋資料找到運用 Materialize for Vue 的框架 Vuetify ，學習並使用在此專案中。
                       </li>
                       <li class="mb-2">
-                        <span class="font-weight-bold">Question: </span>串接後端 API 時失出現 <code>'Access-Control-Allow-Origin' header is present on the requested resource</code>。
+                        <span class="font-weight-bold">Question: </span>串接後端 API 時失出現
+                        <br /><code>'Access-Control-Allow-Origin' header is present on the requested resource</code>。
                         <br />
-                        <span class="font-weight-bold">Solution: </span>學習程式的教學平台助教有開直播跟同學們分享這個問題，，所以一看到就立馬通知後端的隊友處理這個跨瀏覽器資料共享的問題。
+                        <span class="font-weight-bold">Solution: </span>學習程式的教學平台助教有開直播跟同學們分享 跨來源資源共用 CORS 這個問題，所以一看到就立馬通知後端的隊友處理這個跨瀏覽器資料共享的問題。
                       </li>
                     </ul>
                   </div>
@@ -281,7 +284,7 @@
                   <div class="desc">
                     <p>
                       KinkyBoots 網頁包含介紹歌劇院、商店頁面購買靴子及訂票頁面，可觀看剩餘座位票數，訂購完成會寄送
-                      Email 確認信。<br />主要負責後端資料庫處理及 Email 發送功能，前端部分負責串接 API
+                      Email 確認信。 主要負責後端資料庫處理及 Email 發送功能，前端部分負責串接 API
                       資料，並綁定至畫面上。
                     </p>
                   </div>
@@ -298,18 +301,18 @@
                         <li class="mb-2">
                           <span class="font-weight-bold">Question: </span>第一次把 jQuery 加入 Vue 的專案，要如何在每一個 .vue 檔都能使用到 jQuery 選擇器 $ 呢?
                           <br />
-                          <span class="font-weight-bold">Solution: </span>跟夥伴上網搜尋方法，最後在 Youtube 上搜尋到教學影片，而且也發現 jQuery + JavaScript 可以更方便撰寫程式，例如:
-                          <code>$(`.${CurrentBoot}`).attr("src", `/static/${getBootsColor}.png`);</code> 可以把選擇目標及圖片路徑變成動態的變數。
+                          <span class="font-weight-bold">Solution: </span>跟夥伴上網搜尋方法，最後在 Youtube 上搜尋到教學影片，而且也發現 jQuery + JavaScript 可以更方便撰寫程式，例如:<br />
+                          <code>$(`.${CurrentBoot}`).attr("src", `/static/${getBootsColor}.png`)</code><br />可以把選擇目標 (CurrentBoot) 及圖片路徑 (getBootsColor) 轉換成動態的變數。
                         </li>
                         <li class="mb-2">
                           <span class="font-weight-bold">Question: </span>SendGrid 發送訂票通知信時都會被分到垃圾信箱。
                           <br />
-                          <span class="font-weight-bold">Solution: </span>原本以為在 SendGrid 的系統可以設定這個問題，最後找到的解決方法是設定 Domain Name 讓 Gmail 不要判斷為垃圾信或廣告信。
+                          <span class="font-weight-bold">Solution: </span>原本以為在 SendGrid 的系統可以設定這個問題，最後找到的解決方法是設定 Domain Name 讓 Gmail 不要判斷為垃圾信或廣告信，有試著將放在 heroku 的 Domain Name 設定至 SendGrid 後台，也許是因為 heroku 網址有亂數所以還是失敗。
                         </li>
                         <li class="mb-2">
                           <span class="font-weight-bold">Question: </span>後端發送 Email 的信無法套用 CSS Class 郵件格式整個跑掉。
                           <br />
-                          <span class="font-weight-bold">Solution: </span>想到平常收信時都會看到排版過的 Email 所以到自己的信箱尋找類似的 Email 結果發現都使用 Inline CSS ，不過也發現有亂數 Class 的部分，後來對照一下 Inline CSS 發現原來 Gmail 會編譯過一次才寄出。
+                          <span class="font-weight-bold">Solution: </span>想到平常收信時都會看到排版過的 Email 所以到自己的信箱尋找類似的 Email 結果發現都使用 Inline CSS ，不過也發現有亂碼的 Class ，後來對照一下 Inline CSS 發現原來 Gmail 會編譯過一次才寄出。
                         </li>
                       </ul>
                   </div>
@@ -324,7 +327,7 @@
                     <h3>EGTool</h3>
                     <div class="demo">
                       <a
-                        href=" https://drive.google.com/file/d/1iLZyl5-_CNL0QT-9I6sPamiMVPMWr1M-/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1iLZyl5-_CNL0QT-9I6sPamiMVPMWr1M-/view?usp=sharing"
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                         ><i class="fa fa-play-circle" aria-hidden="true"></i>Demo - Windows 軟體版</a
@@ -341,7 +344,7 @@
                   <div class="technology">
                     <p>[相關技術]</p>
                     <ul>
-                      <li>使用 記事本存放專案的資料。</li>
+                      <li>使用記事本存放專案的資料。</li>
                       <li>使用 C# Windows Form 撰寫程式碼。</li>
                       <li>使用計時器提醒休息時間。</li>
                       <li>使用 icon 代替文字功能按鈕。</li>
@@ -352,12 +355,12 @@
                       <li class="mb-2">
                         <span class="font-weight-bold">Question: </span>要怎麼與 Windows 開啟檔案的畫面互動 ( 開啟檔案或是另存新檔 ) ?
                         <br />
-                        <span class="font-weight-bold">Solution: </span>搜尋 Windows Form open txt ，找到 OpenFileDialog 及 SaveFileDialog 這個存檔的元件，經由不斷嘗試後完成此互動功能。
+                        <span class="font-weight-bold">Solution: </span>搜尋 Windows Form open txt ，找到 OpenFileDialog 及 SaveFileDialog 這兩個開啟及存檔的元件，經由不斷嘗試後完成此互動功能。
                       </li>
                       <li class="mb-2">
                         <span class="font-weight-bold">Question: </span>要怎麼讀取 .txt 檔案內容 ?
                         <br />
-                        <span class="font-weight-bold">Solution: </span>搜尋 Windows Form read txt ，找到 ReadAllText() 及 WriteAllText() 兩個 Function ， 後來又遇到檔案變亂碼，後來發現需要設定 Encoding 為 Default。
+                        <span class="font-weight-bold">Solution: </span>搜尋 Windows Form read txt ，找到 ReadAllText() 及 WriteAllText() 兩個 Function ， 之後又遇到檔案變亂碼，後來發現需要設定 Encoding 為 Default。
                       </li>
                     </ul>
                   </div>
@@ -384,7 +387,7 @@
                   <div class="desc">
                     <p>
                       代辦事項 X 是 EGTool (全端工程師時工作開發的 Windows 軟體)的 Web
-                      版，考量到不只工作上生活上也需要記錄很多待辦事項，這次也增加依照 Project 不同管理各別的待辦事項。
+                      版，考量到不只工作，生活上也需要記錄很多待辦事項，這次也增加依照 Project 不同管理各別的待辦事項。
                     </p>
                   </div>
                   <div class="technology">
@@ -405,9 +408,11 @@
                           <span class="font-weight-bold">Solution: </span>後來發現 this.setState() 因為效能的關係並不保證即時更新，所以後來就用 updater 的方式傳一個 callback 解決不保證即時更新的問題。
                         </li>
                         <li class="mb-2">
-                          <span class="font-weight-bold">Question: </span>
+                          <span class="font-weight-bold">Question: </span>刪除 Project 裡面的 Todos 也要一併刪除，一開始這樣寫但是馬上就報錯<br /><code>firestore.collection('todos').where('projectId', '==', id).delete()</code>
                           <br />
-                          <span class="font-weight-bold">Solution: </span>
+                          <span class="font-weight-bold">Solution: </span>上網搜尋後發現需要先把所有資料拿出來<br />
+                          <code>return firestore.collection('todos').where('projectId', '==', id).get()</code><br />
+                          然後在 callback function 把子資料一個個刪除；不過如果是大專案一定不可能這樣做，光撈出全部的子資料就可能花很多時間，於是我思考有沒有可能集合中新增子集合 ? ，結果真的有，於是我很好奇如果刪掉集合那子集合會跟著刪除嗎 ? 結果子集合沒有因為刪除集合而跟著被移除，而且更糟的是子集合還存在資料庫裡面，如果沒有處理這一部分的話，存取資料庫的速度就會被這些幽靈資料所影響，而降低程式的執行速度。
                         </li>
                       </ul>
                   </div>
@@ -449,16 +454,15 @@
                   </div>
                   <div class="post">
                     <div class="post-thumbnail">
-                      <img src="https://picsum.photos/600/400/?random" alt="thumbnail" />
+                      <img src="https://miro.medium.com/max/4368/0*NUg0SPFub8ZeimMd" alt="thumbnail" />
                     </div>
                     <div class="post-title">
-                      <h2>Typography for web</h2>
+                      <h2>UI / UX 初體驗</h2>
                     </div>
                     <div class="post-body">
                       <p>
                         前端工程師是人文藝術與電腦科技結合一身的藝術家，除了程式的邏輯，如果能了解一點 UI / UX
-                        設計的理念，就能與設計師減少溝通障礙，增進使用者對產品的體驗；此篇部落格為自己學習 UX / UI
-                        的心得與收穫分享。
+                        設計的理念，就能與設計師減少溝通障礙，增進使用者對產品的體驗；此篇部落格為自己學習 UI / UX 的心得與收穫分享。
                       </p>
                       <a
                         href="https://medium.com/@Eason_Lin/ui-ux%E5%88%9D%E9%AB%94%E9%A9%97-db8a91051324"
