@@ -43,7 +43,7 @@
 .preloader .pulse img {
   border-radius: 50%;
   width: 60%;
-  background-image: url(../images/Eason-01.jpg);
+  background-image: url('/images/Eason-01.jpg');
 }
 .preloader.fade-out {
   opacity: 0;
@@ -561,7 +561,7 @@
   color: inherit;
 }
 .img-bg {
-  background-image: url('../images/homepage.png');
+  background-image: url('/images/homepage.png');
   background-size: cover;
 }
 h2.menu-item {
