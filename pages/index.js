@@ -718,22 +718,17 @@ export default function HomePage() {
                     <div className="contact-content">
                       <div className="contact-icon">
                         <a href="https://github.com/Eason0in?tab=repositories" target="_blank">
-                          <i className="fab fa-github"></i>
-                        </a>
-                      </div>
-                      <div className="contact-icon">
-                        <a href="https://medium.com/@Eason_Lin" target="_blank">
-                          <i className="fab fa-medium"></i>
+                          <i className="ion-social-github"></i>
                         </a>
                       </div>
                       <div className="contact-icon">
                         <a href="https://www.linkedin.com/in/eason-lin-0" target="_blank">
-                          <i className="fab fa-linkedin"></i>
+                          <i className="ion-social-linkedin"></i>
                         </a>
                       </div>
                       <div className="contact-icon">
                         <a href="https://codepen.io/dashboard/" target="_blank">
-                          <i className="fab fa-codepen"></i>
+                          <i className="ion-social-codepen"></i>
                         </a>
                       </div>
                     </div>
