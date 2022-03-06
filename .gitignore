@@ -6,3 +6,4 @@ fz.txt
 .vscode
 node_modules
 .next
+coverage

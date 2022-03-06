@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react'
+import ColorBlock from '../component/ColorBlock'
+import CopyRight from '../component/CopyRight'
+import PreLoader from '../component/PreLoader'
+import PreLoaderRight from '../component/PreLoaderRight'
 
+const arr = ['resume', 'portfolio', 'blog', 'contact']
 export default function HomePage() {
   const [active, setActive] = useState('')
   const [isLoading, setIsLoading] = useState(true)
@@ -36,12 +41,10 @@ export default function HomePage() {
 
   return (
     <>
-      <div className={['preloader', `${!isLoading ? 'fade-out' : ''}`].join(' ')}>
-        <div className="anim pulse">
-          <img src="./images/Eason-01.jpg" alt="" />
-        </div>
-      </div>
-      <div className={['preloader-right', `${!isLoading ? 'slide-right' : ''}`].join(' ')}></div>
+      <PreLoader isLoading={isLoading} />
+
+      <PreLoaderRight isLoading={isLoading} />
+
       <div className={['menu-container', active ? 'showx' : ''].join(' ')}>
         <ul className="menu">
           <li
@@ -74,17 +77,10 @@ export default function HomePage() {
         </ul>
       </div>
 
-      <section className="home img-bg">
-        <div className="color-block">
-          <div className="house react"></div>
-          <div className="house angular"></div>
-          <div className="house vue"></div>
-          <div className="house backbone"></div>
-        </div>
+      <section className="home img-bg" data-testid="home">
+        <ColorBlock />
 
-        <div className="copyright">
-          <span className="text-uppercase">&copy; 2022 Eason Lin.digital</span>
-        </div>
+        <CopyRight />
 
         <div className="container">
           <div onClick={handleNameBlockClick} className={['name-block', active ? 'reverse' : ''].join(' ')}>
@@ -105,34 +101,27 @@ export default function HomePage() {
               </a>
             </div>
           </div>
+
           <div className={['menu-blocks', active ? 'hidex' : ''].join(' ')}>
-            <div onClick={() => handleMenuClick('resume')} className="resume-block menu-block" data-menu="resume">
-              <div className="resume-content">
-                <h2 className="menu-item text-uppercase resume">resume</h2>
+            {arr.map((item) => (
+              <div
+                key={item}
+                onClick={() => handleMenuClick(item)}
+                className={`${item}-block menu-block`}
+                data-testid={`menu-block-${item}`}
+              >
+                <div className={`${item}-content`}>
+                  <h2 className={`menu-item text-uppercase ${item}`}>{item}</h2>
+                </div>
               </div>
-            </div>
-            <div
-              onClick={() => handleMenuClick('portfolio')}
-              className="portfolio-block menu-block"
-              data-menu="portfolio"
-            >
-              <div className="portfolio-content">
-                <h2 className="menu-item text-uppercase portfolio">portfolio</h2>
-              </div>
-            </div>
-            <div onClick={() => handleMenuClick('blog')} className="blog-block menu-block" data-menu="blog">
-              <div className="blog-content">
-                <h2 className="menu-item text-uppercase blog">blog</h2>
-              </div>
-            </div>
-            <div onClick={() => handleMenuClick('contact')} className="contact-block menu-block" data-menu="contact">
-              <div className="contact-content">
-                <h2 className="menu-item text-uppercase contact">contact</h2>
-              </div>
-            </div>
+            ))}
           </div>
 
-          <div className={['content-blocks', active === 'resume' ? 'showx' : ''].join(' ')} id="resume">
+          <div
+            className={['content-blocks', active === 'resume' ? 'showx' : ''].join(' ')}
+            id="resume"
+            data-testid="resume"
+          >
             <section className="content">
               <div className="block-content">
                 <h3 className="block-title">
