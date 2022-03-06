@@ -4,3 +4,5 @@ fz.txt
 遇到的問題.txt
 .vercel
 .vscode
+node_modules
+.next
