@@ -1,17 +1,41 @@
 import { useEffect, useState } from 'react'
+import BlockTitle from '../component/BlockTitle'
 import ColorBlock from '../component/ColorBlock'
 import CopyRight from '../component/CopyRight'
+import Menu from '../component/Menu'
+import MenuBlocks from '../component/MenuBlocks'
+import NameBlock from '../component/NameBlock'
+import PortfolioItemImg from '../component/PortfolioItemImg'
 import PreLoader from '../component/PreLoader'
 import PreLoaderRight from '../component/PreLoaderRight'
 
 const arr = ['resume', 'portfolio', 'blog', 'contact']
+const contactIconArr = [
+  {
+    href: 'https://github.com/Eason0in?tab=repositories',
+    icon: 'ion-social-github',
+  },
+  {
+    href: 'https://www.linkedin.com/in/eason-lin-0',
+    icon: 'ion-social-linkedin',
+  },
+  {
+    href: 'https://codepen.io/dashboard/',
+    icon: 'ion-social-codepen',
+  },
+]
+
 export default function HomePage() {
   const [active, setActive] = useState('')
   const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
-    setTimeout(() => {
+    const setIsLoadingFalse = setTimeout(() => {
       setIsLoading(false)
-    }, 500)
+    }, 300)
+    setIsLoadingFalse
+    return () => {
+      clearTimeout(setIsLoadingFalse)
+    }
   }, [])
 
   const handleMenuClick = (target) => {
@@ -45,37 +69,7 @@ export default function HomePage() {
 
       <PreLoaderRight isLoading={isLoading} />
 
-      <div className={['menu-container', active ? 'showx' : ''].join(' ')}>
-        <ul className="menu">
-          <li
-            onClick={() => handleMenuClick('resume')}
-            className={['resume text-capitalize', active === 'resume' ? 'active' : ''].join(' ')}
-          >
-            resume
-          </li>
-          <li
-            onClick={() => handleMenuClick('portfolio')}
-            className={['portfolio text-capitalize', active === 'portfolio' ? 'active' : ''].join(' ')}
-          >
-            portfolio
-          </li>
-          <li
-            onClick={() => handleMenuClick('blog')}
-            className={['blog text-capitalize', active === 'blog' ? 'active' : ''].join(' ')}
-          >
-            blog
-          </li>
-          <li
-            onClick={() => handleMenuClick('contact')}
-            className={['contact text-capitalize', active === 'contact' ? 'active' : ''].join(' ')}
-          >
-            contact
-          </li>
-          <li onClick={handleMenuClose} id="close">
-            <i className="ion-ios-close-empty"></i>
-          </li>
-        </ul>
-      </div>
+      <Menu active={active} handleMenuClick={handleMenuClick} handleMenuClose={handleMenuClose} arr={arr} />
 
       <section className="home img-bg" data-testid="home">
         <ColorBlock />
@@ -83,39 +77,8 @@ export default function HomePage() {
         <CopyRight />
 
         <div className="container">
-          <div onClick={handleNameBlockClick} className={['name-block', active ? 'reverse' : ''].join(' ')}>
-            <div className="name-content">
-              <h1>Eason Lin</h1>
-              <h2>Front-End Developer</h2>
-              <div className="intro">
-                擁有 3+ 年網頁開發經驗，1.5 年全端工程師, 2 年前端工程師, 追求簡潔且擴充性高的程式碼。
-              </div>
-              <a
-                target="_blank"
-                href="https://www.cakeresume.com/pdf/s--F3t6ejx2d_qimO1Zc0yp0Q--/r8jwN.pdf"
-                className="btn btn-download"
-              >
-                <span>
-                  <small data-hover="Download Resume">Download Resume</small>
-                </span>
-              </a>
-            </div>
-          </div>
-
-          <div className={['menu-blocks', active ? 'hidex' : ''].join(' ')}>
-            {arr.map((item) => (
-              <div
-                key={item}
-                onClick={() => handleMenuClick(item)}
-                className={`${item}-block menu-block`}
-                data-testid={`menu-block-${item}`}
-              >
-                <div className={`${item}-content`}>
-                  <h2 className={`menu-item text-uppercase ${item}`}>{item}</h2>
-                </div>
-              </div>
-            ))}
-          </div>
+          <NameBlock active={active} handleNameBlockClick={handleNameBlockClick} />
+          <MenuBlocks handleMenuClick={handleMenuClick} active={active} arr={arr} />
 
           <div
             className={['content-blocks', active === 'resume' ? 'showx' : ''].join(' ')}
@@ -124,12 +87,7 @@ export default function HomePage() {
           >
             <section className="content">
               <div className="block-content">
-                <h3 className="block-title">
-                  Profile
-                  <span>
-                    <hr />
-                  </span>
-                </h3>
+                <BlockTitle title="Profile" />
 
                 <div className="info-list row">
                   <div className="col-12 col-md-6">
@@ -155,12 +113,8 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="block-content">
-                <h3 className="block-title">
-                  Experience
-                  <span>
-                    <hr />
-                  </span>
-                </h3>
+                <BlockTitle title="Experience" />
+
                 <div className="row">
                   <div className="col-12">
                     <div className="exp-holder">
@@ -244,12 +198,8 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="block-content">
-                <h3 className="block-title">
-                  Skills
-                  <span>
-                    <hr />
-                  </span>
-                </h3>
+                <BlockTitle title="Skills" />
+
                 <div className="row">
                   <div className="col-12">
                     <h3>Front-End</h3>
@@ -294,19 +244,18 @@ export default function HomePage() {
               </div>
             </section>
           </div>
-          <div className={['content-blocks', active === 'portfolio' ? 'showx' : ''].join(' ')} id="portfolio">
+          <div
+            className={['content-blocks', active === 'portfolio' ? 'showx' : ''].join(' ')}
+            id="portfolio"
+            data-testid="portfolio"
+          >
             <section className="content">
               <div className="block-content">
-                <h3 className="block-title">
-                  Portfolio
-                  <span>
-                    <hr />
-                  </span>
-                </h3>
+                <BlockTitle title="Portfolio" />
+
                 <div className="portfolio-item">
-                  <div className="col-12 mx-auto mb-4">
-                    <img src="./images/personal-website.png" alt="portfolio" />
-                  </div>
+                  <PortfolioItemImg src="./images/personal-website.png" alt="personal-website" />
+
                   <div className="col-12 mx-auto">
                     <div className="subtitle">
                       <h3>個人網站</h3>
@@ -338,9 +287,8 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="portfolio-item">
-                  <div className="col-12 mx-auto mb-4">
-                    <img src="./images/EE.jpg" alt="portfolio" />
-                  </div>
+                  <PortfolioItemImg src="./images/EE.jpg" alt="EE" />
+
                   <div className="col-12 mx-auto">
                     <div className="subtitle">
                       <h3>旅遊規劃幫手 － EagleEyes</h3>
@@ -409,9 +357,8 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="portfolio-item">
-                  <div className="col-12 mx-auto mb-4">
-                    <img src="./images/KB.png" alt="portfolio" />
-                  </div>
+                  <PortfolioItemImg src="./images/KB.png" alt="KB" />
+
                   <div className="col-12 mx-auto">
                     <div className="subtitle">
                       <h3>KinkyBoots 歌劇網站</h3>
@@ -487,9 +434,8 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="portfolio-item">
-                  <div className="col-12 mx-auto mb-4">
-                    <img src="./images/EGTool.png" alt="portfolio" />
-                  </div>
+                  <PortfolioItemImg src="./images/EGTool.png" alt="EGTool" />
+
                   <div className="col-12 mx-auto">
                     <div className="subtitle">
                       <h3>EGTool</h3>
@@ -540,9 +486,8 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="portfolio-item">
-                  <div className="col-12 mx-auto mb-4">
-                    <img src="./images/todoX.png" alt="portfolio" />
-                  </div>
+                  <PortfolioItemImg src="./images/todoX.png" alt="todoX" />
+
                   <div className="col-12 mx-auto">
                     <div className="subtitle">
                       <h3>代辦事項 X</h3>
@@ -606,15 +551,11 @@ export default function HomePage() {
               </div>
             </section>
           </div>
-          <div className={['content-blocks', active === 'blog' ? 'showx' : ''].join(' ')} id="blog">
+          <div className={['content-blocks', active === 'blog' ? 'showx' : ''].join(' ')} id="blog" data-testid="blog">
             <section className="content">
               <div className="block-content">
-                <h3 className="block-title">
-                  Blog
-                  <span>
-                    <hr />
-                  </span>
-                </h3>
+                <BlockTitle title="Blog" />
+
                 <div className="row">
                   <div className="col-12">
                     <div className="post">
@@ -665,15 +606,15 @@ export default function HomePage() {
               </div>
             </section>
           </div>
-          <div className={['content-blocks', active === 'contact' ? 'showx' : ''].join(' ')} id="contact">
+          <div
+            className={['content-blocks', active === 'contact' ? 'showx' : ''].join(' ')}
+            id="contact"
+            data-testid="contact"
+          >
             <section className="content">
               <div className="block-content">
-                <h3 className="block-title">
-                  Get in touch
-                  <span>
-                    <hr />
-                  </span>
-                </h3>
+                <BlockTitle title="Get in touch" />
+
                 <div className="row">
                   <div className="col-12 text-center">
                     <img className="pic" src="./images/Eason-01.jpg" alt="Eason" />
@@ -705,21 +646,13 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div className="contact-content">
-                      <div className="contact-icon">
-                        <a href="https://github.com/Eason0in?tab=repositories" target="_blank">
-                          <i className="ion-social-github"></i>
-                        </a>
-                      </div>
-                      <div className="contact-icon">
-                        <a href="https://www.linkedin.com/in/eason-lin-0" target="_blank">
-                          <i className="ion-social-linkedin"></i>
-                        </a>
-                      </div>
-                      <div className="contact-icon">
-                        <a href="https://codepen.io/dashboard/" target="_blank">
-                          <i className="ion-social-codepen"></i>
-                        </a>
-                      </div>
+                      {contactIconArr.map(({ href, icon }) => (
+                        <div key={icon} className="contact-icon">
+                          <a href={href} target="_blank">
+                            <i className={icon}></i>
+                          </a>
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className="col-3"></div>

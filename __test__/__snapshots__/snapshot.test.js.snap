@@ -21,31 +21,37 @@ exports[`renders homepage unchanged 1`] = `
   />
   <div
     class="menu-container "
+    data-testid="menu-container"
   >
     <ul
       class="menu"
     >
       <li
         class="resume text-capitalize "
+        data-testid="menu-container-resume"
       >
         resume
       </li>
       <li
         class="portfolio text-capitalize "
+        data-testid="menu-container-portfolio"
       >
         portfolio
       </li>
       <li
         class="blog text-capitalize "
+        data-testid="menu-container-blog"
       >
         blog
       </li>
       <li
         class="contact text-capitalize "
+        data-testid="menu-container-contact"
       >
         contact
       </li>
       <li
+        data-testid="close"
         id="close"
       >
         <i
@@ -90,6 +96,7 @@ exports[`renders homepage unchanged 1`] = `
     >
       <div
         class="name-block "
+        data-testid="name-block"
       >
         <div
           class="name-content"
@@ -561,6 +568,7 @@ exports[`renders homepage unchanged 1`] = `
       </div>
       <div
         class="content-blocks "
+        data-testid="portfolio"
         id="portfolio"
       >
         <section
@@ -584,7 +592,7 @@ exports[`renders homepage unchanged 1`] = `
                 class="col-12 mx-auto mb-4"
               >
                 <img
-                  alt="portfolio"
+                  alt="personal-website"
                   src="./images/personal-website.png"
                 />
               </div>
@@ -658,7 +666,7 @@ exports[`renders homepage unchanged 1`] = `
                 class="col-12 mx-auto mb-4"
               >
                 <img
-                  alt="portfolio"
+                  alt="EE"
                   src="./images/EE.jpg"
                 />
               </div>
@@ -799,7 +807,7 @@ exports[`renders homepage unchanged 1`] = `
                 class="col-12 mx-auto mb-4"
               >
                 <img
-                  alt="portfolio"
+                  alt="KB"
                   src="./images/KB.png"
                 />
               </div>
@@ -948,7 +956,7 @@ exports[`renders homepage unchanged 1`] = `
                 class="col-12 mx-auto mb-4"
               >
                 <img
-                  alt="portfolio"
+                  alt="EGTool"
                   src="./images/EGTool.png"
                 />
               </div>
@@ -1053,7 +1061,7 @@ exports[`renders homepage unchanged 1`] = `
                 class="col-12 mx-auto mb-4"
               >
                 <img
-                  alt="portfolio"
+                  alt="todoX"
                   src="./images/todoX.png"
                 />
               </div>
@@ -1183,6 +1191,7 @@ exports[`renders homepage unchanged 1`] = `
       </div>
       <div
         class="content-blocks "
+        data-testid="blog"
         id="blog"
       >
         <section
@@ -1278,6 +1287,7 @@ exports[`renders homepage unchanged 1`] = `
       </div>
       <div
         class="content-blocks "
+        data-testid="contact"
         id="contact"
       >
         <section
